@@ -4,16 +4,24 @@ import { nanoid } from "nanoid";
 
 const handleShortUrl =  async (req, res) => {
       const {originalurl} = req.body;
+
       if(!originalurl){
         throw new BadRequest('URL is required', 400);
       };
+
+      const isExistedUrl = await ShortUrl.findOne({originalurl});
+      if(isExistedUrl){
+        throw new BadRequest("URL already existed", 400);
+      }
+
       const urlId = nanoid(9);
-      const url = await ShortUrl.create({
+       await ShortUrl.create({
           shorturl: urlId,
           originalurl: originalurl
       })
    
-      res.status(200).json({data: url});
+     return res.render('home', {data: urlId});
+    //   res.status(200).json({data: url});
    
 
 }
