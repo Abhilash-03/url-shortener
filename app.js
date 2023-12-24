@@ -28,7 +28,7 @@ app.set('views', path.resolve('./views'))
 
 // routes
 app.use('/', staticRoute);
-app.use('/api/v1/urlshortner', urlRoutes);
+app.use('/url', urlRoutes);
 
 // middleware
 app.use(errorHandler);
