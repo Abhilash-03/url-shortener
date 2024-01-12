@@ -83,3 +83,14 @@ thead{
     border-radius: 6px;
     margin: 10px;
 }
+
+.showurl{
+    background: lightgray;
+    max-width: 600px;
+    font-size: 1.4rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    border-radius: 10px;
+}

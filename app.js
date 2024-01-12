@@ -5,6 +5,7 @@ import urlRoutes from './routes/shorturl.routes.js';
 import staticRoute from './routes/staticRouter.routes.js'
 import { connectDB } from './db/connect.db.js';
 import { errorHandler } from './middlewares/errorhandler.middleware.js';
+import { fileURLToPath } from 'url';
 const app = express();
 import path from 'path';
 
@@ -15,8 +16,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'))
 

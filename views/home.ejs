@@ -8,20 +8,20 @@
 </head>
 <body>
     <h1>URL SHORTENER</h1>
-     <form action="/api/v1/urlshortner" method="post">
+     <form action="/url" method="post">
         <div class="inputarea">
             <label for="url">Enter Your URL:</label>
             <input type="url" placeholder="https://example.com" name="originalurl" required>
         </div>
         
         <button type="submit">Generate URL</button>
-        <p class="demo">Use: <em>http://localhost:5000/url/{shorturl}</em></p>
+        <p class="demo">Use: <em>https://shturl-app.vercel.app/url/{shorturl}</em></p>
     </form>
-     <div>
-        <% if (locals.data) { %>
-         <p>URL Generated: http://localhost:5000/url/<%= data %></p>
+    <% if (locals.data) { %>
+     <div class="showurl">
+         <a href="https://shturl-app.vercel.app/url/<%= data %>" target="_blank">URL Generated: https://shturl-app.vercel.app/url/<%= data %></a>
+        </div>
         <% } %>
-     </div>
 <div class="tbl">
      <% if (locals.urls) { %>
         <table>
