@@ -7,7 +7,6 @@ import { connectDB } from './db/connect.db.js';
 import { errorHandler } from './middlewares/errorhandler.middleware.js';
 const app = express();
 import path from 'path';
-import { ShortUrl } from './models/url.models.js';
 
 
 dotenv.config();
@@ -16,13 +15,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.get('/', async(req, res) => {
-//     const allurls = await ShortUrl.find({});
-//     return res.render('home', {
-//         urls: allurls
-//     });
-// })
 
+app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'))
 
