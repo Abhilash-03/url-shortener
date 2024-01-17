@@ -48,7 +48,7 @@ input{
    
 }
 button{
-    width: 30%;
+    width: 55%;
     margin: auto;
     cursor: pointer;
 }
@@ -68,9 +68,7 @@ thead{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .tbl{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 200px;
     max-width: 1200px;
     overflow: auto;
     margin: 1rem auto;

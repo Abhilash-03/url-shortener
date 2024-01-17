@@ -21,9 +21,6 @@ const handleShortUrl =  async (req, res) => {
       })
    
      return res.render('home', {data: urlId});
-    //   res.status(200).json({data: url});
-   
-
 }
 
 const handleRedirect = async (req, res) => {
